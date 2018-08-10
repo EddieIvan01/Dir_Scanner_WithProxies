@@ -31,3 +31,6 @@ from proxy import get_proxy as gp
 def scan_target_url_exists(target_url, proxy):
 ```
 
+***
+
+/dictionary目录下是原来在github上找的字典，但我忘记地址了，不能在这儿贴出来，抱歉
