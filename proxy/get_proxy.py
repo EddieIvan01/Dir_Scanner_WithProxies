@@ -11,7 +11,7 @@ author: EddieIvan
 '''
 
 local = "http://127.0.0.1:2333"
-proxy_json = requests.get(local + "/proxy?act=get").json()
+proxy_json = requests.get(local+"/proxy?act=get").json()
 proxy_list = []
 if proxy_json["code"] == 200:
     for i in proxy_json["proxies"]:
