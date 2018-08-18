@@ -7,6 +7,7 @@ Decorator for dir_scanner
 using ProxyPool from
 https://github.com/eddieivan01/ProxyPool
 author: EddieIvan
+
 '''
 
 local = "http://127.0.0.1:2333"
@@ -16,8 +17,8 @@ if proxy_json["code"] == 200:
     for i in proxy_json["proxies"]:
         proxy_list.append(
             {
-                "http":"http://" + i["ip"] + ":" + i["port"],
-                "https":"https://" + i["ip"] + ":" + i["port"]
+                "http": f"http://{i['ip']}:{i['port']}",
+                "https": f"https://{i['ip']}:{i['port']}"
             }
         )
 else:
@@ -25,7 +26,7 @@ else:
 
 def RequestWithProxy(f):
     try:
-        res = requests.get(local, timeout = 3)
+        res = requests.get(local, timeout=3)
     except:
         print("[*]Local server are not listening")
         sys.exit(-1)
